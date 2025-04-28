@@ -8,28 +8,26 @@ const requestHandler = async ({
   filters,
   meta = {},
 }) => {
-  const payload = {
-    page,
-    perPage: perPage,
-    filter: {
-      ...filters,
-      search: search || undefined,
-    },
-    // sort: sortBy
-    //   ? {
-    //       field: sortBy,
-    //       order: sortOrder,
-    //     }
-    //   : undefined,
-    // ...meta,
-  };
+  const params = new URLSearchParams();
 
-  const dataRes = await fetch(`https://cms.ethiopicmary.com/${endpoint}`, {
-    params: payload,
-  });
+  if (page) params.append("page", page);
+  if (perPage) params.append("perPage", perPage);
+  if (search) params.append("filters[search]", search);
+  if (sortBy)
+    params.append("sort", sortOrder === "asc" ? sortBy : `-${sortBy}`);
+  // if (sortOrder) params.append("sortOrder", sortOrder);
 
+  // Add filters as individual query params if needed
+  if (filters) {
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value !== undefined && value !== "") params.append(key, value);
+    });
+  }
+
+  const url = `https://cms.ethiopicmary.com/${endpoint}?${params.toString()}`;
+
+  const dataRes = await fetch(url);
   const data = await dataRes.json();
-  debugger;
 
   return {
     items: data.data,
