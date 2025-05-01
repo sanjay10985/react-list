@@ -4,7 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "pnpm --filter {apps/*} run dev",
+    "dev:docs": "pnpm --filter docs run dev",
+    "dev:playground": "pnpm --filter playground run dev",
+    "build": "pnpm --filter {apps/*} run build",
+    "build:docs": "pnpm --filter docs run build",
+    "build:playground": "pnpm --filter playground run build",
+    "start": "pnpm --filter {apps/*} run preview",
+    "start:docs": "pnpm --filter docs run preview",
+    "start:playground": "pnpm --filter docs run preview"
   },
   "keywords": [],
   "author": "",
