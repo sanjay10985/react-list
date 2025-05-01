@@ -12,4 +12,4 @@ export { ReactListPerPage } from "./components/per-page";
 export { ReactListRefresh } from "./components/refresh";
 export { ReactListSearch } from "./components/search";
 export { ReactListSummary } from "./components/summary";
-export { ListProvider } from "./context/list-provider";
+export { ReactListProvider } from "./context/list-provider";

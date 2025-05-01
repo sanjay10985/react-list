@@ -2,7 +2,7 @@ import { createContext, useContext, useMemo, useState } from "react";
 
 const ListContext = createContext(null);
 
-export const ListProvider = ({ children, config }) => {
+export const ReactListProvider = ({ children, config }) => {
   const { requestHandler, stateManager = {} } = config;
   const [listState, setListState] = useState({
     data: [],
