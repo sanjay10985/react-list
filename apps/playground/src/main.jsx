@@ -1,4 +1,4 @@
-import { ListProvider } from "@7span/react-list";
+import { ReactListProvider } from "@7span/react-list";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import requestHandler from "./api/request-handler.js";
@@ -7,8 +7,8 @@ import "./index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <ListProvider config={{ requestHandler }}>
+    <ReactListProvider config={{ requestHandler }}>
       <App />
-    </ListProvider>
+    </ReactListProvider>
   </StrictMode>
 );

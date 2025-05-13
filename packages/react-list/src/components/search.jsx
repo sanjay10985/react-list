@@ -15,8 +15,7 @@ export const ReactListSearch = memo(({ children, debounceTime = 500 }) => {
     }
   }, [search]);
 
-  const handleChange = (e) => {
-    const value = e.target.value;
+  const handleChange = (value) => {
     setLocalSearch(value);
 
     // Clear any existing timer
@@ -72,7 +71,7 @@ export const ReactListSearch = memo(({ children, debounceTime = 500 }) => {
       <input
         type="text"
         value={localSearch}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e.target.value)}
         placeholder="Search..."
         style={searchStyles.input}
       />
