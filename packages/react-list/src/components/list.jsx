@@ -15,7 +15,6 @@ const ReactList = ({
   filters = {},
   attrs,
   version = 1,
-  hasPaginationHistory = true,
   paginationMode = "pagination",
   meta = {},
 }) => {
@@ -222,9 +221,13 @@ const ReactList = ({
     state.selection,
     state.page,
     state.perPage,
+    state.sortBy,
+    state.sortOrder,
   ]);
 
-  return children({ ...memoizedState });
+  return typeof children === "function"
+    ? children({ ...memoizedState })
+    : children;
 };
 
 export default ReactList;

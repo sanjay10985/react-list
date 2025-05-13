@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "@7span/react-list": "workspace:*"
+    "@7span/react-list": "workspace:*",
+    "@iconify/react": "^5.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
