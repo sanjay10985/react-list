@@ -25,7 +25,6 @@ ReactList follows a provider pattern where the main `<ReactList>` component prov
 | ------------------------------------------------- | ----------------------------------------------------------- |
 | [`<ReactListPagination>`](/components/pagination) | Traditional pagination with page numbers and navigation.    |
 | [`<ReactListLoadMore>`](/components/load-more)    | "Load More" button for infinite scrolling style pagination. |
-| [`<ReactListGoTo>`](/components/go-to)            | Jump to a specific page.                                    |
 | [`<ReactListPerPage>`](/components/per-page)      | Change the number of items per page.                        |
 
 ### State Components
